@@ -33,6 +33,8 @@
 					      <td class="fw-bold">Rp ${p.price }</td>
 					      <td>
 					      	<a href="delete/${p.id }"><i class="fa-regular fa-trash-can text-danger" style="font-size: 30px;"></i></a>
+					      	<a href="update/${p.id }"><i class="fa-solid fa-pen-nib text-primary" style="font-size: 30px;"></i></a>
+					      
 					      </td>
 					    </tr>	
 				    </c:forEach>			   				    

@@ -26,8 +26,7 @@ public class MainController {
 	public String home(Model m) {
 		
 		List<Product> products = productDao.getProducts();
-		m.addAttribute("products", products);
-		
+		m.addAttribute("products", products);		
 		
 		return "index";
 	}
@@ -56,6 +55,13 @@ public class MainController {
 		RedirectView redirectView = new RedirectView();
 		redirectView.setUrl(request.getContextPath() + "/");
 		return redirectView;		
+	}
+	
+	@RequestMapping("/update/{productId}")
+	public String updateForm(@PathVariable("productId") int pid, Model model) {
+		Product product = this.productDao.getProduct(pid);
+		model.addAttribute("product", product);
+		return "update_form";
 	}
 
 }
